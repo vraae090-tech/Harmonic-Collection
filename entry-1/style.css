@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+h1 {
+  font-family: "Instrument Sans", Sans Serif;
+  font-size: 160px;
+  font-style: bold;
+}
+
+h2 {
+  font-family: "Instrument Sans", Sans Serif;
+  font-style: light; 
+}
+
+knit-info {
+}
+
+h3 {
+  font-family: "Instrument Sans", Sans Serif;
+  font-style: light; 
+  font-size: 50px;
+  color: whitesmoke;
+  background-color: #475644;
+
+  
+}
+
+p {
+  font-family: "Instrument Sans", Sans Serif;
+  font-style: regular; 
+  font-size: 15px;
+  color: whitesmoke;
+  background-color: #475644;
+}
+
+img {
+  width: 50%;
+}
