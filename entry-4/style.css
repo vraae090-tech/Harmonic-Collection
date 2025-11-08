@@ -2,9 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&display=swap');
 
-
-}
-<style>
+  <style>
         * {
             margin: 0;
             padding: 0;
@@ -16,104 +14,91 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #e0e0e0;
+            min-height: 100vh;
+            background-color: #ebf7ff;
+            padding: 0;
         }
         
         .label-container {
             display: flex;
             background-color: white;
-        
+            width: 100vw;
+            height: 100vh;
+            max-width: 1600px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.1);
         }
         
         .left-section {
             width: 50%;
-            position: relative;
-            background-color: #f5f5f5;
-            overflow: hidden;
-        }
-        
-        .left-section img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .image-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 40px 30px;
-            height: 200px;
-        }
-        
-        .composition {
-            font-size: 28px;
-            font-weight: 300;
-            text-align: center;
-            color: #333;
-            margin-top: 80px;
-        }
-        
-        .right-section {
-            width: 50%;
-            padding: 40px;
+            padding: 60px 40px;
+            background-color: white;
             display: flex;
             flex-direction: column;
-            background-color: #fafafa;
+            justify-content: center;
         }
         
-        .knit-name {
-            text-align: center;
-            margin-bottom: 0;
+        .brand-area {
+            text-align: left;
+            margin-bottom: 30px;
         }
         
-        h4 {
+        .brand-area h4 {
             font-family: "Instrument Sans", sans-serif;
-            font-size: 48px;
+            font-size: 42px;
+            color: #000000;
+            letter-spacing: 4px;
             font-weight: 400;
-            letter-spacing: 8px;
-            color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
-        h1 {
+        .brand-area h1 {
             font-family: "Instrument Sans", sans-serif;
-            font-size: 72px;
+            font-size: 38px;
             font-weight: 700;
-            text-align: center;
             color: #000;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+        
+        .composition-tag {
+            background-color: #396c83;
+            color: white;
+            padding: 12px 24px;
+            display: inline-block;
+            font-size: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+            width: auto;
+            border-radius: 2px;
+        }
+        
+        .composition-tag h2 {
+            font-family: "Instrument Sans", sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            color: white;
+            margin: 3px 0;
+            font-style: normal;
         }
         
         hr {
-            border: none;
-            height: 1px;
-            background-color: #ccc;
-            margin: 15px 0;
+            display: none;
         }
         
-        h2 {
-            font-family: "Instrument Sans", sans-serif;
-            font-weight: 300;
-            font-size: 20px;
-            text-align: center;
-            color: #000000;
-            margin: 10px 0;
-            font-style: italic;
-        }
-        
-        .gauge-container {
-            display: column;
-            gap: 15px;
-            margin-top: 10 px;
+        .info-list {
+            background-color: #ebf7ff;
+            padding: 30px;
+            border-radius: 4px;
         }
         
         .knit-info {
-            background-color: rgb(252, 230, 184);
-            padding: 20px 15px;
-            border-radius: 4px;
+            padding: 15px 0;
+            border-bottom: 1px solid #d6ecf9;
+        }
+        
+        .knit-info:last-child {
+            border-bottom: none;
         }
         
         h3 {
@@ -131,3 +116,105 @@
             font-size: 13px;
             color: #555;
             line-height: 1.5;
+        }
+        
+        .right-section {
+            width: 50%;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .right-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+ @media screen and (min-width: 1400px) {
+            .left-section {
+                padding: 80px 60px;
+            }
+            
+            .brand-area h4 {
+                font-size: 48px;
+                letter-spacing: 5px;
+            }
+            
+            .brand-area h1 {
+                font-size: 44px;
+                margin-bottom: 35px;
+            }
+            
+            .composition-tag {
+                padding: 16px 32px;
+                margin-bottom: 40px;
+            }
+            
+            .composition-tag h2 {
+                font-size: 16px;
+                margin: 4px 0;
+            }
+            
+            .info-list {
+                padding: 40px;
+            }
+            
+            .knit-info {
+                padding: 20px 0;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+            
+            p {
+                font-size: 14px;
+            }
+        }
+
+ @media screen and (max-width: 1024px) {
+            .label-container {
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .left-section {
+                padding: 50px 35px;
+            }
+            
+            .brand-area h4 {
+                font-size: 36px;
+                letter-spacing: 3px;
+            }
+            
+            .brand-area h1 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+            
+            .composition-tag {
+                padding: 10px 20px;
+                margin-bottom: 25px;
+            }
+            
+            .composition-tag h2 {
+                font-size: 13px;
+            }
+            
+            .info-list {
+                padding: 25px;
+            }
+            
+            .knit-info {
+                padding: 12px 0;
+            }
+            
+            h3 {
+                font-size: 15px;
+            }
+            
+            p {
+                font-size: 12px;
+            }
+        }

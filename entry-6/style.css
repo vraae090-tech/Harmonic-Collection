@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap')
+   
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Instrument Sans", sans-serif;
+            background-color: #ffffff;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .yarn-grid {
+            position: relative;
+            min-height: 900px;
+        }
+        
+        /* Individual yarn card */
+        .yarn-card {
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .yarn-card:hover {
+            transform: scale(1.12);
+            z-index: 30;
+        }
+        
+        .yarn-link {
+            text-decoration: none;
+            display: block;
+            position: relative;
+        }
+        
+        /* Label on top */
+        .yarn-label {
+            padding: 8px 15px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 1px;
+            width: 180px;
+            border-radius: 4px 4px 0 0;
+        }
+        
+        /* Image  */
+        .yarn-image {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+            background-color: #e0e0e0;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+        }
+        
+        
+        .entry1 {
+            top: 120px;
+            left: 80px;
+        }
+        
+        .entry2 {
+            top: 50px;
+            left: 520px;
+        }
+        
+        .entry3 {
+            top: 180px;
+            left: 950px;
+        }
+        
+        .entry4 {
+            top: 350px;
+            left: 200px;
+        }
+        
+        .entry5 {
+            top: 280px;
+            left: 680px;
+        }
+        
+        .entry6 {
+            top: 520px;
+            left: 50px;
+        }
+        
+        .entry7 {
+            top: 450px;
+            left: 450px;
+        }
+        
+        .entry8 {
+            top: 400px;
+            left: 880px;
+        }
+        
+        .entry9 {
+            top: 650px;
+            left: 320px;
+        }
+        
+        .entry10 {
+            top: 580px;
+            left: 750px;
+        }
+        
+        
+        .entry1 .yarn-label {
+            background-color: #2f5537;
+        }
+        
+        .entry2 .yarn-label {
+            background-color: #758d48;
+        }
+        
+        .entry3 .yarn-label {
+            background-color: #c9a66b;
+            color: #333;
+        }
+        
+        .entry4 .yarn-label {
+            background-color: #396c83;
+        }
+        
+        .entry5 .yarn-label {
+            background-color: #8eaef3;
+            color: #333;
+        }
+        
+        .entry6 .yarn-label {
+            background-color: #2f5537;
+        }
+        
+        
+        .entry7 .yarn-label {
+            background-color: #8b7355;
+        }
+        
+        .entry8 .yarn-label {
+            background-color: #6b7280;
+        }
+        
+        .entry9 .yarn-label {
+            background-color: #7c6f64;
+        }
+        
+        .entry10 .yarn-label {
+            background-color: #64748b;
+        }
+        
+        /* Placeholder  */
+        .placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #e5e5e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 12px;
+        }
+        
+        
+        @media screen and (max-width: 1024px) {
+            .yarn-grid {
+                min-height: 800px;
+            }
+            
+            .yarn-label {
+                width: 160px;
+                font-size: 12px;
+                padding: 7px 12px;
+            }
+            
+            .yarn-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            /* Adjust positions for tablet */
+            .entry1 { top: 80px; left: 50px; }
+            .entry2 { top: 40px; left: 380px; }
+            .entry3 { top: 150px; left: 650px; }
+            .entry4 { top: 300px; left: 150px; }
+            .entry5 { top: 240px; left: 480px; }
+            .entry6 { top: 450px; left: 40px; }
+            .entry7 { top: 380px; left: 340px; }
+            .entry8 { top: 350px; left: 620px; }
+            .entry9 { top: 550px; left: 250px; }
+            .entry10 { top: 500px; left: 520px; }
+        }
+        
+    
+        @media screen and (max-width: 768px) {
+            .yarn-grid {
+                position: static;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 25px;
+                justify-content: center;
+                min-height: auto;
+                padding: 20px 0;
+            }
+            
+            .yarn-card {
+                position: static;
+            }
+            
+            .yarn-label {
+                width: 150px;
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+            
+            .yarn-image {
+                width: 110px;
+                height: 110px;
+            }
+        }
+        
+        
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+            }
+            
+            .yarn-grid {
+                gap: 20px;
+            }
+            
+            .yarn-label {
+                width: 130px;
+                font-size: 10px;
+                padding: 5px 8px;
+            }
+            
+            .yarn-image {
+                width: 95px;
+                height: 95px;
+            }
+        }
+    </style>

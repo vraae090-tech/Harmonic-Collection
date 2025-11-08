@@ -2,37 +2,329 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&display=swap');
 
-h4{
-  font-family: "Instrument Sans", Sans Serif;
-  font-size: 100px;
-  align-content: center;
-}
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Instrument Sans", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f6ffde;
+            padding: 0;
+        }
+        
+        .label-container {
+            display: flex;
+            background-color: white;
+            width: 100vw;
+            height: 100vh;
+            max-width: 1600px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.1);
+        }
+        
+        .left-section {
+            width: 50%;
+            padding: 60px 40px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .brand-area {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        
+        .brand-area h4 {
+            font-family: "Instrument Sans", sans-serif;
+            font-size: 42px;
+            color: #000000;
+            letter-spacing: 4px;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        
+        .brand-area h1 {
+            font-family: "Instrument Sans", sans-serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: #000;
+            letter-spacing: 1px;
+            line-height: 1.3;
+            margin-bottom: 25px;
+        }
+        
+        .composition-tag {
+            background-color: #758d48;
+            color: white;
+            padding: 12px 24px;
+            display: inline-block;
+            font-size: 14px;
+            margin-bottom: 30px;
+            text-align: center;
+            width: auto;
+        }
+        
+        .composition-tag h2 {
+            font-family: "Instrument Sans", sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            color: white;
+            margin: 3px 0;
+            font-style: normal;
+        }
+        
+        hr {
+            display: none;
+        }
+        
+        .info-list {
+            background-color: #f6ffde;
+            padding: 30px;
+            border-radius: 4px;
+        }
+        
+        .knit-info {
+            padding: 15px 0;
+            border-bottom: 1px solid #e8f4ce;
+        }
+        
+        
+        h3 {
+            font-family: "Instrument Sans", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-family: "Instrument Sans", sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .right-section {
+            width: 50%;
+            background-color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .right-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+         @media screen and (min-width: 1400px) {
+            .left-section {
+                padding: 80px 60px;
+            }
+            
+            .brand-area h4 {
+                font-size: 48px;
+            }
+            
+            .brand-area h1 {
+                font-size: 44px;
+                margin-bottom: 35px;
+            }
+            
+            .composition-tag {
+                padding: 16px 32px;
+                margin-bottom: 40px;
+            }
+            
+            .composition-tag h2 {
+                font-size: 16px;
+            }
+            
+            .info-list {
+                padding: 40px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+            
+            p {
+                font-size: 14px;
+            }
+        }
+         @media screen and (max-width: 1024px) {
+            .label-container {
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .left-section {
+                padding: 50px 35px;
+            }
+            
+            .brand-area h4 {
+                font-size: 36px;
+                letter-spacing: 3px;
+            }
+            
+            .brand-area h1 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+            
+            .composition-tag {
+                padding: 10px 20px;
+                margin-bottom: 25px;
+            }
+            
+            .composition-tag h2 {
+                font-size: 13px;
+            }
+            
+            .info-list {
+                padding: 25px;
+            }
+            
+            h3 {
+                font-size: 15px;
+            }
+            
+            p {
+                font-size: 12px;
+            }
+        }
 
-h1 {
-  font-family: "Instrument Sans", Sans Serif;
-  font-size: 160px;
-  font-style: bold;
-  align-content: center;
-}
+         @media screen and (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+            
+            .label-container {
+                flex-direction: column;
+                width: 100vw;
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .left-section {
+                width: 100%;
+                padding: 40px 30px;
+                order: 2;
+            }
+            
+            .brand-area {
+                text-align: center;
+                margin-bottom: 25px;
+            }
+            
+            .brand-area h4 {
+                font-size: 28px;
+                letter-spacing: 2px;
+                margin-bottom: 12px;
+            }
+            
+            .brand-area h1 {
+                font-size: 26px;
+                margin-bottom: 20px;
+            }
+            
+            .composition-tag {
+                display: block;
+                width: fit-content;
+                margin: 0 auto 25px auto;
+                padding: 12px 24px;
+            }
+            
+            .composition-tag h2 {
+                font-size: 13px;
+            }
+            
+            .info-list {
+                padding: 20px;
+            }
+            
+            .knit-info {
+                padding: 12px 0;
+            }
+            
+            h3 {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+            
+            p {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+            
+            .right-section {
+                width: 100%;
+                height: 300px;
+                order: 1;
+            }
+        }
 
-h2 {
-  font-family: "Instrument Sans", Sans Serif;
-  font-style: light; 
-}
-
-h3 {
-  font-family: "Instrument Sans", Sans Serif;
-  font-style: light; 
-  font-size: 50px
-}
-
-knit-info {
-background-color: rgb(238, 238, 253);
-}
-
-p {
-  font-family: "Instrument Sans", Sans Serif;
-  font-style: regular; 
-  font-size: 15px;
-  background-color: rgb(238, 238, 253);
-}
+         @media screen and (max-width: 480px) {
+            .label-container {
+                box-shadow: none;
+            }
+            
+            .left-section {
+                padding: 30px 20px;
+            }
+            
+            .brand-area h4 {
+                font-size: 24px;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+            }
+            
+            .brand-area h1 {
+                font-size: 22px;
+                margin-bottom: 18px;
+                letter-spacing: 0;
+            }
+            
+            .composition-tag {
+                padding: 10px 20px;
+                margin-bottom: 20px;
+            }
+            
+            .composition-tag h2 {
+                font-size: 12px;
+                margin: 2px 0;
+            }
+            
+            .info-list {
+                padding: 18px;
+                background-color: #f9ffed;
+            }
+            
+            .knit-info {
+                padding: 10px 0;
+            }
+            
+            h3 {
+                font-size: 13px;
+                margin-bottom: 6px;
+            }
+            
+            p {
+                font-size: 11px;
+                line-height: 1.4;
+            }
+            
+            .right-section {
+                height: 250px;
+            }
+        }

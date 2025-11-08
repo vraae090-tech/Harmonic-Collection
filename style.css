@@ -1,3 +1,171 @@
-body {
-  font-family: sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+   
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Instrument Sans", sans-serif;
+            background-color: #fffff;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .page-title {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .yarn-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Individual yarn card */
+        .yarn-card {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .yarn-card:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+        
+        .yarn-link {
+            text-decoration: none;
+            display: block;
+        }
+        
+        .yarn-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            background-color: #e0e0e0;
+        }
+        
+        .yarn-label {
+            padding: 10px 15px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: white;
+            letter-spacing: 1px;
+        }
+        
+        /* Entry 1 - Cotton + Merino (Green) */
+        .entry1 .yarn-label {
+            background-color: #2f5537;
+        }
+        
+        /* Entry 2 - Take Care Mohair (Green) */
+        .entry2 .yarn-label {
+            background-color: #758d48;
+        }
+        
+        /* Entry 3 - Galway Wool (Beige) */
+        .entry3 .yarn-label {
+            background-color: #c9a66b;
+            color: #333;
+        }
+        
+        /* Entry 4 - Hedgerow (Blue) */
+        .entry4 .yarn-label {
+            background-color: #396c83;
+        }
+        
+        /* Entry 5 - 24/7 Cotton (Blue) */
+        .entry5 .yarn-label {
+            background-color: #8eaef3;
+            color: #333;
+        }
+        
+        /* Entry 6 - Alpaca (Green) */
+        .entry6 .yarn-label {
+            background-color: #2f5537;
+        }
+        
+        /* Additional cards for layout (you can add more entries) */
+        .entry7 .yarn-label {
+            background-color: #8b4513;
+        }
+        
+        .entry8 .yarn-label {
+            background-color: #4a5568;
+        }
+        
+        /* Responsive layout */
+        @media screen and (max-width: 768px) {
+            .page-title {
+                font-size: 36px;
+                margin-bottom: 30px;
+            }
+            
+            .yarn-grid {
+                gap: 30px;
+            }
+            
+            .yarn-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .yarn-label {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+            }
+            
+            .page-title {
+                font-size: 28px;
+                margin-bottom: 25px;
+            }
+            
+            .yarn-grid {
+                gap: 20px;
+            }
+            
+            .yarn-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .yarn-label {
+                font-size: 11px;
+                padding: 6px 10px;
+            }
+        }
+        
+        /* Placeholder styling for missing images */
+        .placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 14px;
+        }
