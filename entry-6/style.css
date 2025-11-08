@@ -9,247 +9,193 @@
         
         body {
             font-family: "Instrument Sans", sans-serif;
-            background-color: #ffffff;
-            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .yarn-grid {
-            position: relative;
-            min-height: 900px;
-        }
-        
-        /* Individual yarn card */
-        .yarn-card {
-            position: absolute;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .yarn-card:hover {
-            transform: scale(1.12);
-            z-index: 30;
-        }
-        
-        .yarn-link {
-            text-decoration: none;
-            display: block;
-            position: relative;
-        }
-        
-        /* Label on top */
-        .yarn-label {
-            padding: 8px 15px;
-            text-align: center;
-            font-size: 13px;
-            font-weight: 600;
-            color: white;
-            letter-spacing: 1px;
-            width: 180px;
-            border-radius: 4px 4px 0 0;
-        }
-        
-        /* Image  */
-        .yarn-image {
-            width: 140px;
-            height: 140px;
-            object-fit: cover;
-            display: block;
-            background-color: #e0e0e0;
-            margin: 0 auto;
-            border: 1px solid #ddd;
-        }
-        
-        
-        .entry1 {
-            top: 120px;
-            left: 80px;
-        }
-        
-        .entry2 {
-            top: 50px;
-            left: 520px;
-        }
-        
-        .entry3 {
-            top: 180px;
-            left: 950px;
-        }
-        
-        .entry4 {
-            top: 350px;
-            left: 200px;
-        }
-        
-        .entry5 {
-            top: 280px;
-            left: 680px;
-        }
-        
-        .entry6 {
-            top: 520px;
-            left: 50px;
-        }
-        
-        .entry7 {
-            top: 450px;
-            left: 450px;
-        }
-        
-        .entry8 {
-            top: 400px;
-            left: 880px;
-        }
-        
-        .entry9 {
-            top: 650px;
-            left: 320px;
-        }
-        
-        .entry10 {
-            top: 580px;
-            left: 750px;
-        }
-        
-        
-        .entry1 .yarn-label {
             background-color: #2f5537;
+            padding: 20px;
         }
         
-        .entry2 .yarn-label {
-            background-color: #758d48;
+        .label-container {
+            display: flex;
+            background-color: white;
+            width: 100%;
+            max-width: 1200px;
+            min-height: 600px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
         
-        .entry3 .yarn-label {
-            background-color: #c9a66b;
-            color: #333;
-        }
-        
-        .entry4 .yarn-label {
-            background-color: #396c83;
-        }
-        
-        .entry5 .yarn-label {
-            background-color: #8eaef3;
-            color: #333;
-        }
-        
-        .entry6 .yarn-label {
+        .left-section {
+            width: 50%;
+            position: relative;
             background-color: #2f5537;
+            overflow: hidden;
         }
         
-        
-        .entry7 .yarn-label {
-            background-color: #8b7355;
-        }
-        
-        .entry8 .yarn-label {
-            background-color: #6b7280;
-        }
-        
-        .entry9 .yarn-label {
-            background-color: #7c6f64;
-        }
-        
-        .entry10 .yarn-label {
-            background-color: #64748b;
-        }
-        
-        /* Placeholder  */
-        .placeholder {
+        .left-section img {
             width: 100%;
             height: 100%;
-            background-color: #e5e5e5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 12px;
+            object-fit: cover;
         }
         
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px 30px;
+            height: 200px;
+        }
+        
+        .composition {
+            font-size: 28px;
+            font-weight: 300;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 80px;
+        }
+        
+        .composition-detail {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        
+        .right-section {
+            width: 50%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            background-color: #fafafa;
+        }
+        
+        .knit-name {
+            text-align: center;
+            margin-bottom: 0;
+        }
+        
+        h4 {
+            font-family: "Instrument Sans", sans-serif;
+            font-size: 48px;
+            font-weight: 400;
+            letter-spacing: 8px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        h1 {
+            font-family: "Instrument Sans", sans-serif;
+            font-size: 72px;
+            font-weight: 700;
+            text-align: center;
+            color: #000;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            line-height: 1.1;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #1f5023;
+            margin: 15px 0;
+        }
+        
+        h2 {
+            font-family: "Instrument Sans", sans-serif;
+            font-weight: 300;
+            font-size: 20px;
+            text-align: center;
+            color: #000000;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .gauge-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: auto;
+            padding: 20px 0;
+        }
+        
+        .knit-info {
+            background-color: #2f5537;
+            padding: 20px 30px;
+            border-radius: 0px;
+        }
+        
+        h3 {
+            font-family: "Instrument Sans", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+        
+        p {
+            font-family: "Instrument Sans", sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            color: #ffffff;
+            line-height: 1.5;
+        }
+        
+        @media screen and (min-width: 1400px) {
+            .label-container {
+                max-width: 1400px;
+                min-height: 700px;
+            }
+            
+            h1 {
+                font-size: 84px;
+            }
+            
+            .composition {
+                font-size: 32px;
+            }
+            
+            h2 {
+                font-size: 22px;
+            }
+            
+            .right-section {
+                padding: 50px;
+            }
+            
+            .knit-info {
+                padding: 25px 40px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+            
+            p {
+                font-size: 14px;
+            }
+        }
         
         @media screen and (max-width: 1024px) {
-            .yarn-grid {
-                min-height: 800px;
+            .label-container {
+                min-height: 500px;
             }
             
-            .yarn-label {
-                width: 160px;
-                font-size: 12px;
-                padding: 7px 12px;
+            h1 {
+                font-size: 60px;
             }
             
-            .yarn-image {
-                width: 120px;
-                height: 120px;
+            .composition {
+                font-size: 24px;
+                margin-top: 60px;
             }
             
-            /* Adjust positions for tablet */
-            .entry1 { top: 80px; left: 50px; }
-            .entry2 { top: 40px; left: 380px; }
-            .entry3 { top: 150px; left: 650px; }
-            .entry4 { top: 300px; left: 150px; }
-            .entry5 { top: 240px; left: 480px; }
-            .entry6 { top: 450px; left: 40px; }
-            .entry7 { top: 380px; left: 340px; }
-            .entry8 { top: 350px; left: 620px; }
-            .entry9 { top: 550px; left: 250px; }
-            .entry10 { top: 500px; left: 520px; }
-        }
-        
-    
-        @media screen and (max-width: 768px) {
-            .yarn-grid {
-                position: static;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 25px;
-                justify-content: center;
-                min-height: auto;
-                padding: 20px 0;
+            .right-section {
+                padding: 30px;
             }
             
-            .yarn-card {
-                position: static;
-            }
-            
-            .yarn-label {
-                width: 150px;
-                font-size: 11px;
-                padding: 6px 10px;
-            }
-            
-            .yarn-image {
-                width: 110px;
-                height: 110px;
+            .knit-info {
+                padding: 18px 25px;
             }
         }
-        
-        
-        @media screen and (max-width: 480px) {
-            body {
-                padding: 20px 10px;
-            }
-            
-            .yarn-grid {
-                gap: 20px;
-            }
-            
-            .yarn-label {
-                width: 130px;
-                font-size: 10px;
-                padding: 5px 8px;
-            }
-            
-            .yarn-image {
-                width: 95px;
-                height: 95px;
-            }
-        }
-    </style>
