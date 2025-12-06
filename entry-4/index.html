@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Merino, Cashmere, Mulberry Silk</title>
-  <link rel="icon" type="image/png" href="../assets/yarn-icon.png">
+  <link rel="icon" type="image/png" href="../assets/1064104.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -15,40 +15,83 @@
 </head>
 
 <body>
+    <nav class="navbar">
+        <a href="../index.html" class="nav-logo">Yarn Collection</a>
+        <div class="nav-links">
+            <a href="../entry-1/index.html">Cashmere</a>
+            <a href="../entry-2/index.html">Mohair</a>
+            <a href="../entry-3/index.html">Hemp</a>
+            <a href="../entry-4/index.html" class="active">Merino Blend</a>
+            <a href="../entry-5/index.html">Mohair Silk</a>
+            <a href="../entry-6/index.html">Ramie</a>
+            <a href="../entry-7/index.html">Royal Alpaca</a>
+            <a href="../entry-8/index.html">Cotton</a>
+            <a href="../entry-9/index.html">Shetland Wool</a>
+            <a href="../entry-10/index.html">Tussah Silk</a>
+        </div>
+    </nav>
+
     <div class="label-container">
         <div class="left-section">
-            <div class="brand-area">
-                <h4>Hedgerow</h4>
-                <h1>Merino + Cashmere + Mulberry Silk</h1>
+            <section class="knit-name">
+                <h1>Merino Blend</h1>
+            </section>
+            <hr>
+            <h2>93% Merino Wool</h2>
+            <h2>3.5% Cashmere • 3.5% Silk</h2>
+            <hr>
+            <div class="toggle-container">
+                <button class="toggle-btn active" id="knit-btn">Knitting</button>
+                <button class="toggle-btn" id="crochet-btn">Crochet</button>
             </div>
-            
-            <div class="composition-tag">
-                <h2>93% Merino Wool</h2>
-                <h2>3.5% Cashmere</h2>
-                <h2>3.5% Mulberry Silk</h2>
-            </div>
-            
-            <div class="info-list">
-                <section class="knit-info">
+            <div class="gauge-container">
+                <section class="knit-info" id="knitting-info">
                     <h3>Suggested Knitting Range</h3>
-                    <p>US 6 or 7 (4-4.5 mm) needles<br>
-                    4.75-5.25 stitches per inch<br>
-                    Worsted/aran-weight yarn</p>
+                    <p>20 - 24 sts = 4 in (10 cm)<br>
+                    on US 6-7 (4-4.5mm)<br>
+                    needles</p>
                 </section>
-                
-                <section class="knit-info">
+                <section class="knit-info hidden" id="crochet-info">
                     <h3>Suggested Crochet Range</h3>
-                    <p>F or G (4-4.5 mm)<br>
-                    4.75-5.25 stitches per inch<br>
-                    Worsted/aran-weight yarn</p>
+                    <p>16 - 20 sts = 4 in (10 cm)<br>
+                    on US F-G (4-4.5mm)<br>
+                    hooks</p>
                 </section>
             </div>
         </div>
-        
         <div class="right-section">
-            <img src="../assets/blue-knitted-fabric-500x500.jpg" alt="Blue Knitted Fabric">
+            <img src="../assets/FFLLAMA.png" alt="Merino Blend Texture">
+            <div class="image-overlay">
+                <div class="composition">
+                    93% Merino Wool
+                    <div class="composition-detail">Luxuriously Soft Blend</div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var knittingBtn = document.getElementById('knit-btn');
+            var crochetBtn = document.getElementById('crochet-btn');
+            var knittingInfo = document.getElementById('knitting-info');
+            var crochetInfo = document.getElementById('crochet-info');
+
+            knittingBtn.addEventListener('click', function() {
+                knittingInfo.classList.remove('hidden');
+                crochetInfo.classList.add('hidden');
+                knittingBtn.classList.add('active');
+                crochetBtn.classList.remove('active');
+            });
+
+            crochetBtn.addEventListener('click', function() {
+                crochetInfo.classList.remove('hidden');
+                knittingInfo.classList.add('hidden');
+                crochetBtn.classList.add('active');
+                knittingBtn.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

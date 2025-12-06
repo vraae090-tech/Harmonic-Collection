@@ -2,329 +2,340 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&display=swap');
 
-  <style>
+ <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: "Instrument Sans", sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f6ffde;
-            padding: 0;
+            background-color: #7d7461;
+            padding: 20px;
+            padding-top: 80px;
         }
-        
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            border-bottom: 1px solid #333;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            font-family: "Instrument Sans", sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-family: "Instrument Sans", sans-serif;
+            font-size: 13px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .nav-links a.active {
+            font-weight: 700;
+            color: #000;
+        }
+
         .label-container {
             display: flex;
             background-color: white;
-            width: 100vw;
-            height: 100vh;
-            max-width: 1600px;
-            box-shadow: 0 0 40px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 1200px;
+            min-height: 600px;
         }
-        
+
         .left-section {
             width: 50%;
-            padding: 60px 40px;
-            background-color: white;
+            padding: 40px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-        }
-        
-        .brand-area {
-            text-align: left;
-            margin-bottom: 30px;
-        }
-        
-        .brand-area h4 {
-            font-family: "Instrument Sans", sans-serif;
-            font-size: 42px;
-            color: #000000;
-            letter-spacing: 4px;
-            font-weight: 400;
-            margin-bottom: 15px;
-        }
-        
-        .brand-area h1 {
-            font-family: "Instrument Sans", sans-serif;
-            font-size: 38px;
-            font-weight: 700;
-            color: #000;
-            letter-spacing: 1px;
-            line-height: 1.3;
-            margin-bottom: 25px;
-        }
-        
-        .composition-tag {
-            background-color: #758d48;
-            color: white;
-            padding: 12px 24px;
-            display: inline-block;
-            font-size: 14px;
-            margin-bottom: 30px;
-            text-align: center;
-            width: auto;
-        }
-        
-        .composition-tag h2 {
-            font-family: "Instrument Sans", sans-serif;
-            font-weight: 300;
-            font-size: 14px;
-            color: white;
-            margin: 3px 0;
-            font-style: normal;
-        }
-        
-        hr {
-            display: none;
-        }
-        
-        .info-list {
-            background-color: #f6ffde;
-            padding: 30px;
-            border-radius: 4px;
-        }
-        
-        .knit-info {
-            padding: 15px 0;
-            border-bottom: 1px solid #e8f4ce;
-        }
-        
-        
-        h3 {
-            font-family: "Instrument Sans", sans-serif;
-            font-weight: 500;
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-        
-        p {
-            font-family: "Instrument Sans", sans-serif;
-            font-weight: 400;
-            font-size: 13px;
-            color: #555;
-            line-height: 1.5;
-        }
-        
-        .right-section {
-            width: 50%;
-            background-color: #ffffff;
+            background-color: #fafafa;
             position: relative;
-            overflow: hidden;
+            z-index: 2;
+            border-right: 1px solid #5c5649;
         }
-        
+
+        .right-section {
+            width: 55%;
+            position: relative;
+            background-color: #7d7461;
+            overflow: hidden;
+            margin-left: -50px;
+            z-index: 1;
+        }
+
         .right-section img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        
-         @media screen and (min-width: 1400px) {
-            .left-section {
-                padding: 80px 60px;
-            }
-            
-            .brand-area h4 {
-                font-size: 48px;
-            }
-            
-            .brand-area h1 {
-                font-size: 44px;
-                margin-bottom: 35px;
-            }
-            
-            .composition-tag {
-                padding: 16px 32px;
-                margin-bottom: 40px;
-            }
-            
-            .composition-tag h2 {
-                font-size: 16px;
-            }
-            
-            .info-list {
-                padding: 40px;
-            }
-            
-            h3 {
-                font-size: 18px;
-            }
-            
-            p {
-                font-size: 14px;
-            }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
         }
-         @media screen and (max-width: 1024px) {
+
+        .composition {
+            font-size: 28px;
+            font-weight: 300;
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .composition-detail {
+            font-size: 20px;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .knit-name {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-family: "Instrument Sans", sans-serif;
+            font-size: 64px;
+            font-weight: 700;
+            text-align: center;
+            color: #000;
+            letter-spacing: 2px;
+            line-height: 1.1;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #7d7461;
+            margin: 20px 0;
+        }
+
+        h2 {
+            font-family: "Instrument Sans", sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            text-align: center;
+            color: #333;
+            margin: 8px 0;
+            font-style: italic;
+        }
+
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .toggle-btn {
+            font-family: "Instrument Sans", sans-serif;
+            padding: 10px 20px;
+            font-size: 14px;
+            border: 1px solid #7d7461;
+            background-color: white;
+            color: #7d7461;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn.active {
+            background-color: #7d7461;
+            color: white;
+        }
+
+        .toggle-btn:hover {
+            background-color: #5c5649;
+            color: white;
+        }
+
+        .gauge-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .knit-info {
+            background-color: #7d7461;
+            padding: 20px 25px;
+            border-top: 1px solid #5c5649;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h3 {
+            font-family: "Instrument Sans", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-family: "Instrument Sans", sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        @media screen and (max-width: 1024px) {
             .label-container {
-                height: auto;
-                min-height: 100vh;
+                min-height: 500px;
             }
-            
+
+            h1 {
+                font-size: 52px;
+            }
+
+            .composition {
+                font-size: 24px;
+            }
+
             .left-section {
-                padding: 50px 35px;
+                padding: 30px;
             }
-            
-            .brand-area h4 {
-                font-size: 36px;
-                letter-spacing: 3px;
+
+            .knit-info {
+                padding: 18px 20px;
             }
-            
-            .brand-area h1 {
-                font-size: 32px;
-                margin-bottom: 20px;
+
+            .nav-links {
+                gap: 15px;
             }
-            
-            .composition-tag {
-                padding: 10px 20px;
-                margin-bottom: 25px;
-            }
-            
-            .composition-tag h2 {
-                font-size: 13px;
-            }
-            
-            .info-list {
-                padding: 25px;
-            }
-            
-            h3 {
-                font-size: 15px;
-            }
-            
-            p {
+
+            .nav-links a {
                 font-size: 12px;
             }
         }
 
-         @media screen and (max-width: 768px) {
+        @media screen and (max-width: 768px) {
             body {
                 padding: 0;
+                padding-top: 120px;
             }
-            
+
+            .navbar {
+                flex-direction: column;
+                padding: 15px 20px;
+                gap: 10px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
             .label-container {
                 flex-direction: column;
-                width: 100vw;
-                height: auto;
-                min-height: 100vh;
+                min-height: auto;
             }
-            
+
             .left-section {
                 width: 100%;
-                padding: 40px 30px;
+                padding: 30px 25px;
                 order: 2;
+                border-right: none;
+                border-top: 1px solid #5c5649;
             }
-            
-            .brand-area {
-                text-align: center;
-                margin-bottom: 25px;
-            }
-            
-            .brand-area h4 {
-                font-size: 28px;
-                letter-spacing: 2px;
-                margin-bottom: 12px;
-            }
-            
-            .brand-area h1 {
-                font-size: 26px;
-                margin-bottom: 20px;
-            }
-            
-            .composition-tag {
-                display: block;
-                width: fit-content;
-                margin: 0 auto 25px auto;
-                padding: 12px 24px;
-            }
-            
-            .composition-tag h2 {
-                font-size: 13px;
-            }
-            
-            .info-list {
-                padding: 20px;
-            }
-            
-            .knit-info {
-                padding: 12px 0;
-            }
-            
-            h3 {
-                font-size: 14px;
-                margin-bottom: 8px;
-            }
-            
-            p {
-                font-size: 12px;
-                line-height: 1.4;
-            }
-            
+
             .right-section {
                 width: 100%;
                 height: 300px;
                 order: 1;
+                margin-left: 0;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            .toggle-btn {
+                padding: 8px 16px;
+                font-size: 13px;
             }
         }
 
-         @media screen and (max-width: 480px) {
-            .label-container {
-                box-shadow: none;
+        @media screen and (max-width: 480px) {
+            body {
+                padding-top: 140px;
             }
-            
-            .left-section {
-                padding: 30px 20px;
-            }
-            
-            .brand-area h4 {
-                font-size: 24px;
-                letter-spacing: 1px;
-                margin-bottom: 10px;
-            }
-            
-            .brand-area h1 {
-                font-size: 22px;
-                margin-bottom: 18px;
-                letter-spacing: 0;
-            }
-            
-            .composition-tag {
-                padding: 10px 20px;
-                margin-bottom: 20px;
-            }
-            
-            .composition-tag h2 {
-                font-size: 12px;
-                margin: 2px 0;
-            }
-            
-            .info-list {
-                padding: 18px;
-                background-color: #f9ffed;
-            }
-            
-            .knit-info {
-                padding: 10px 0;
-            }
-            
-            h3 {
-                font-size: 13px;
-                margin-bottom: 6px;
-            }
-            
-            p {
+
+            .nav-links a {
                 font-size: 11px;
-                line-height: 1.4;
             }
-            
+
+            .nav-links {
+                gap: 8px;
+            }
+
             .right-section {
                 height: 250px;
             }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .composition {
+                font-size: 20px;
+            }
+
+            .left-section {
+                padding: 25px 20px;
+            }
+
+            .toggle-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .toggle-btn {
+                width: 100%;
+                max-width: 200px;
+            }
         }
+    </style>

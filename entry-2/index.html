@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohaire, Wool, Polyamide</title>
-  <link rel="icon" type="image/png" href="../assets/yarn-icon.png">
+  <title>Mohair</title>
+  <link rel="icon" type="image/png" href="../assets/1064104.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -15,40 +15,83 @@
 </head>
 
 <body>
+    <nav class="navbar">
+        <a href="../index.html" class="nav-logo">Yarn Collection</a>
+        <div class="nav-links">
+            <a href="../entry-1/index.html">Cashmere</a>
+            <a href="../entry-2/index.html" class="active">Mohair</a>
+            <a href="../entry-3/index.html">Hemp</a>
+            <a href="../entry-4/index.html">Merino Blend</a>
+            <a href="../entry-5/index.html">Mohair Silk</a>
+            <a href="../entry-6/index.html">Ramie</a>
+            <a href="../entry-7/index.html">Royal Alpaca</a>
+            <a href="../entry-8/index.html">Cotton</a>
+            <a href="../entry-9/index.html">Shetland Wool</a>
+            <a href="../entry-10/index.html">Tussah Silk</a>
+        </div>
+    </nav>
+
     <div class="label-container">
         <div class="left-section">
-            <div class="brand-area">
-                <h4>TAKE CARE MOHAIR</h4>
-                <h1>Kid Mohaire + Wool + Polyamide</h1>
+            <section class="knit-name">
+                <h1>Mohair</h1>
+            </section>
+            <hr>
+            <h2>78% Kid Mohair</h2>
+            <h2>13% Wool • 9% Polyamide</h2>
+            <hr>
+            <div class="toggle-container">
+                <button class="toggle-btn active" id="knit-btn">Knitting</button>
+                <button class="toggle-btn" id="crochet-btn">Crochet</button>
             </div>
-            
-            <div class="composition-tag">
-                <h2>78% Kid Mohair</h2>
-                <h2>13% Wool</h2>
-                <h2>9% Polyamide</h2>
-            </div>
-            
-            <div class="info-list">
-                <section class="knit-info">
+            <div class="gauge-container">
+                <section class="knit-info" id="knitting-info">
                     <h3>Suggested Knitting Range</h3>
-                    <p>6.5mm - 15mm / US 10.5 - US 19<br>
-                    4.75-5.25 stitches per inch<br>
-                    Worsted/aran-weight yarn</p>
+                    <p>12 - 16 sts = 4 in (10 cm)<br>
+                    on US 10.5-19 (6.5-15mm)<br>
+                    needles</p>
                 </section>
-                
-                <section class="knit-info">
+                <section class="knit-info hidden" id="crochet-info">
                     <h3>Suggested Crochet Range</h3>
-                    <p>6.5mm - 15mm / US 10.5 - US 19<br>
-                    4.75-5.25 stitches per inch<br>
-                    Worsted/aran-weight yarn</p>
+                    <p>10 - 14 sts = 4 in (10 cm)<br>
+                    on US K-M (6.5-9mm)<br>
+                    hooks</p>
                 </section>
             </div>
         </div>
-        
         <div class="right-section">
-            <img src="../assets/Mohair.jpg" alt="Mohair Texture">
+            <img src="../assets/FMOHAIR.png" alt="Mohair Texture">
+            <div class="image-overlay">
+                <div class="composition">
+                    78% Kid Mohair
+                    <div class="composition-detail">Silky & Lightweight</div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var knittingBtn = document.getElementById('knit-btn');
+            var crochetBtn = document.getElementById('crochet-btn');
+            var knittingInfo = document.getElementById('knitting-info');
+            var crochetInfo = document.getElementById('crochet-info');
+
+            knittingBtn.addEventListener('click', function() {
+                knittingInfo.classList.remove('hidden');
+                crochetInfo.classList.add('hidden');
+                knittingBtn.classList.add('active');
+                crochetBtn.classList.remove('active');
+            });
+
+            crochetBtn.addEventListener('click', function() {
+                crochetInfo.classList.remove('hidden');
+                knittingInfo.classList.add('hidden');
+                crochetBtn.classList.add('active');
+                knittingBtn.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

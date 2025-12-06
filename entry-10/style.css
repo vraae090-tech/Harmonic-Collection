@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap')
    
-<style>
+  <style>
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +13,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #5c6d5e;
+            background-color: #c4b7a6;
             padding: 20px;
             padding-top: 80px;
         }
@@ -80,13 +80,13 @@
             background-color: #fafafa;
             position: relative;
             z-index: 2;
-            border-right: 1px solid #3d4a3e;
+            border-right: 1px solid #9a8d7c;
         }
 
         .right-section {
             width: 55%;
             position: relative;
-            background-color: #5c6d5e;
+            background-color: #c4b7a6;
             overflow: hidden;
             margin-left: -50px;
             z-index: 1;
@@ -138,7 +138,7 @@
         hr {
             border: none;
             height: 1px;
-            background-color: #5c6d5e;
+            background-color: #c4b7a6;
             margin: 20px 0;
         }
 
@@ -163,20 +163,20 @@
             font-family: "Instrument Sans", sans-serif;
             padding: 10px 20px;
             font-size: 14px;
-            border: 1px solid #5c6d5e;
+            border: 1px solid #c4b7a6;
             background-color: white;
-            color: #5c6d5e;
+            color: #9a8d7c;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .toggle-btn.active {
-            background-color: #5c6d5e;
+            background-color: #c4b7a6;
             color: white;
         }
 
         .toggle-btn:hover {
-            background-color: #3d4a3e;
+            background-color: #9a8d7c;
             color: white;
         }
 
@@ -188,9 +188,9 @@
         }
 
         .knit-info {
-            background-color: #5c6d5e;
+            background-color: #c4b7a6;
             padding: 20px 25px;
-            border-top: 1px solid #3d4a3e;
+            border-top: 1px solid #9a8d7c;
         }
 
         .hidden {
@@ -273,7 +273,7 @@
                 padding: 30px 25px;
                 order: 2;
                 border-right: none;
-                border-top: 1px solid #3d4a3e;
+                border-top: 1px solid #9a8d7c;
             }
 
             .right-section {
