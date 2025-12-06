@@ -1,171 +1,226 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
    
-<style>
+ <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: "Instrument Sans", sans-serif;
-            background-color: #fffff;
-            padding: 40px 20px;
             min-height: 100vh;
+            background-color: #f5f5f3;
+            overflow-x: hidden;
         }
-        
-        .page-title {
-            text-align: center;
+
+        .title {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: "Instrument Sans", sans-serif;
             font-size: 48px;
             font-weight: 700;
+            letter-spacing: 8px;
             color: #333;
-            margin-bottom: 50px;
-            letter-spacing: 2px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .yarn-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        /* Individual yarn card */
-        .yarn-card {
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .yarn-card:hover {
-            transform: scale(1.1);
             z-index: 10;
-        }
-        
-        .yarn-link {
-            text-decoration: none;
-            display: block;
-        }
-        
-        .yarn-image {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-            background-color: #e0e0e0;
-        }
-        
-        .yarn-label {
-            padding: 10px 15px;
             text-align: center;
-            font-size: 14px;
-            font-weight: 500;
-            color: white;
-            letter-spacing: 1px;
+            pointer-events: none;
         }
-        
-        /* Entry 1 - Cotton + Merino (Green) */
-        .entry1 .yarn-label {
-            background-color: #2f5537;
+
+        .swatch-container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            padding: 40px;
         }
-        
-        /* Entry 2 - Take Care Mohair (Green) */
-        .entry2 .yarn-label {
-            background-color: #758d48;
+
+        .swatch {
+            position: absolute;
+            transition: transform 0.3s ease, z-index 0.3s ease;
+            cursor: pointer;
         }
-        
-        /* Entry 3 - Galway Wool (Beige) */
-        .entry3 .yarn-label {
-            background-color: #c9a66b;
-            color: #333;
+
+        .swatch:hover {
+            transform: scale(1.1) rotate(2deg);
+            z-index: 20;
         }
-        
-        /* Entry 4 - Hedgerow (Blue) */
-        .entry4 .yarn-label {
-            background-color: #396c83;
-        }
-        
-        /* Entry 5 - 24/7 Cotton (Blue) */
-        .entry5 .yarn-label {
-            background-color: #8eaef3;
-            color: #333;
-        }
-        
-        /* Entry 6 - Alpaca (Green) */
-        .entry6 .yarn-label {
-            background-color: #2f5537;
-        }
-        
-        /* Additional cards for layout (you can add more entries) */
-        .entry7 .yarn-label {
-            background-color: #8b4513;
-        }
-        
-        .entry8 .yarn-label {
-            background-color: #4a5568;
-        }
-        
-        /* Responsive layout */
-        @media screen and (max-width: 768px) {
-            .page-title {
-                font-size: 36px;
-                margin-bottom: 30px;
-            }
-            
-            .yarn-grid {
-                gap: 30px;
-            }
-            
-            .yarn-image {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .yarn-label {
-                font-size: 12px;
-                padding: 8px 12px;
-            }
-        }
-        
-        @media screen and (max-width: 480px) {
-            body {
-                padding: 20px 10px;
-            }
-            
-            .page-title {
-                font-size: 28px;
-                margin-bottom: 25px;
-            }
-            
-            .yarn-grid {
-                gap: 20px;
-            }
-            
-            .yarn-image {
-                width: 120px;
-                height: 120px;
-            }
-            
-            .yarn-label {
-                font-size: 11px;
-                padding: 6px 10px;
-            }
-        }
-        
-        /* Placeholder styling for missing images */
-        .placeholder {
+
+        .swatch img {
             width: 100%;
             height: 100%;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-size: 14px;
+            object-fit: cover;
+            display: block;
         }
+
+        .swatch-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: "Instrument Sans", sans-serif;
+            font-size: 12px;
+            color: #333;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .swatch:hover .swatch-label {
+            opacity: 1;
+        }
+
+        /* Swatch 1 - Cashmere */
+        .swatch-1 {
+            top: 8%;
+            left: 12%;
+            width: 120px;
+            height: 140px;
+            transform: rotate(-5deg);
+        }
+
+        /* Swatch 2 - Mohair */
+        .swatch-2 {
+            top: 5%;
+            left: 45%;
+            width: 130px;
+            height: 160px;
+            transform: rotate(3deg);
+        }
+
+        /* Swatch 3 - Hemp */
+        .swatch-3 {
+            top: 12%;
+            right: 15%;
+            width: 100px;
+            height: 120px;
+            transform: rotate(-8deg);
+        }
+
+        /* Swatch 4 - Merino Blend */
+        .swatch-4 {
+            top: 28%;
+            left: 8%;
+            width: 110px;
+            height: 150px;
+            transform: rotate(6deg);
+        }
+
+        /* Swatch 5 - Mohair Silk */
+        .swatch-5 {
+            top: 25%;
+            left: 30%;
+            width: 115px;
+            height: 130px;
+            transform: rotate(-3deg);
+        }
+
+        /* Swatch 6 - Ramie */
+        .swatch-6 {
+            top: 22%;
+            right: 28%;
+            width: 105px;
+            height: 125px;
+            transform: rotate(5deg);
+        }
+
+        /* Swatch 7 - Royal Alpaca */
+        .swatch-7 {
+            top: 50%;
+            left: 18%;
+            width: 125px;
+            height: 140px;
+            transform: rotate(-4deg);
+        }
+
+        /* Swatch 8 - Cotton */
+        .swatch-8 {
+            top: 48%;
+            left: 42%;
+            width: 110px;
+            height: 130px;
+            transform: rotate(7deg);
+        }
+
+        /* Swatch 9 - Shetland Wool */
+        .swatch-9 {
+            top: 45%;
+            right: 12%;
+            width: 120px;
+            height: 145px;
+            transform: rotate(-6deg);
+        }
+
+        /* Swatch 10 - Tussah Silk */
+        .swatch-10 {
+            top: 70%;
+            left: 35%;
+            width: 115px;
+            height: 135px;
+            transform: rotate(4deg);
+        }
+
+        @media screen and (max-width: 1024px) {
+            .title {
+                font-size: 36px;
+                letter-spacing: 6px;
+            }
+
+            .swatch-1 { top: 5%; left: 5%; width: 100px; height: 120px; }
+            .swatch-2 { top: 3%; left: 40%; width: 110px; height: 140px; }
+            .swatch-3 { top: 8%; right: 8%; width: 90px; height: 110px; }
+            .swatch-4 { top: 22%; left: 3%; width: 95px; height: 130px; }
+            .swatch-5 { top: 20%; left: 28%; width: 100px; height: 115px; }
+            .swatch-6 { top: 18%; right: 20%; width: 90px; height: 110px; }
+            .swatch-7 { top: 45%; left: 10%; width: 105px; height: 120px; }
+            .swatch-8 { top: 42%; left: 38%; width: 95px; height: 115px; }
+            .swatch-9 { top: 40%; right: 5%; width: 100px; height: 125px; }
+            .swatch-10 { top: 65%; left: 30%; width: 100px; height: 120px; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .title {
+                font-size: 28px;
+                letter-spacing: 4px;
+            }
+
+            .swatch-container {
+                min-height: 150vh;
+                padding: 20px;
+            }
+
+            .swatch-1 { top: 2%; left: 5%; width: 80px; height: 100px; }
+            .swatch-2 { top: 2%; right: 5%; width: 90px; height: 110px; }
+            .swatch-3 { top: 12%; left: 35%; width: 75px; height: 95px; }
+            .swatch-4 { top: 20%; left: 5%; width: 85px; height: 105px; }
+            .swatch-5 { top: 22%; right: 10%; width: 80px; height: 100px; }
+            .swatch-6 { top: 35%; left: 25%; width: 75px; height: 95px; }
+            .swatch-7 { top: 45%; left: 5%; width: 85px; height: 100px; }
+            .swatch-8 { top: 48%; right: 8%; width: 80px; height: 100px; }
+            .swatch-9 { top: 60%; left: 30%; width: 85px; height: 105px; }
+            .swatch-10 { top: 72%; left: 10%; width: 80px; height: 100px; }
+        }
+
+        @media screen and (max-width: 480px) {
+            .title {
+                font-size: 22px;
+                letter-spacing: 3px;
+            }
+
+            .swatch-container {
+                min-height: 180vh;
+            }
+
+            .swatch-1 { top: 1%; left: 5%; width: 70px; height: 85px; }
+            .swatch-2 { top: 1%; right: 5%; width: 75px; height: 90px; }
+            .swatch-3 { top: 10%; left: 40%; width: 65px; height: 80px; }
+            .swatch-4 { top: 18%; left: 5%; width: 70px; height: 88px; }
+            .swatch-5 { top: 20%; right: 8%; width: 68px; height: 85px; }
+            .swatch-6 { top: 30%; left: 30%; width: 65px; height: 82px; }
+            .swatch-7 { top: 40%; left: 5%; width: 72px; height: 88px; }
+            .swatch-8 { top: 42%; right: 5%; width: 68px; height: 85px; }
+            .swatch-9 { top: 54%; left: 35%; width: 70px; height: 88px; }
+            .swatch-10 { top: 65%; left: 10%; width: 68px; height: 85px; }
+        }
+    </style>
